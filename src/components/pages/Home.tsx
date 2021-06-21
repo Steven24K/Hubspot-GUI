@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { NavLink } from 'react-router-dom'
 import { DefaultComponentProps } from '../../state'
-
+import { Loader } from '../shared/Loader'
 interface HomePageProps extends DefaultComponentProps {
 
 }
@@ -32,6 +32,8 @@ export const HomePage = (props: HomePageProps) => {
                     <td>{form.inlineMessage.slice(0, 50)}{form.inlineMessage.length > 50 ? "..." : ""}</td>
                     <td>{form.formFieldGroups.length}</td>
                 </tr>)}
+
+                {props.appState.forms.kind == 'loading' && <Loader />}
             </tbody>
         </table>
     </div>

@@ -27,7 +27,7 @@ As development continues more functionality might be added in the future.
 
 `npm run watch` Compile files in watch mode, development build. 
 
-`npm run serve` Serve files with ExpressJs. 
+`npm run serve` Serve files with from Flask. 
 
 `npm run build` Build production Javascript bundles, output to the dist folder. 
 

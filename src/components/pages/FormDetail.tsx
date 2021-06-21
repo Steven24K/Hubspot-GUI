@@ -1,15 +1,16 @@
 import * as React from 'react'
 import { Field } from '../../models/HubspotForm'
 import { DefaultComponentProps } from '../../state'
+import { Loader } from '../shared/Loader'
 
 interface FormDetailProps extends DefaultComponentProps {
 
 }
 
-export const FormDetialPage = (props: FormDetailProps) => {
+export const FormDetailPage = (props: FormDetailProps) => {
   if (props.appState.currentPage.kind != 'form-detail') return <span></span>
-  if (props.appState.current_form.kind != 'loaded') return <span>Loading...</span>
-  if (props.appState.current_submissions.kind != 'loaded') return <span>Loading...</span>
+  if (props.appState.current_form.kind != 'loaded') return <Loader />
+  if (props.appState.current_submissions.kind != 'loaded') return <Loader />
 
   let form = props.appState.current_form.value
   let submission = props.appState.current_submissions.value

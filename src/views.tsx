@@ -2,7 +2,7 @@ import { Action, any, async, fromJSX, Widget } from "widgets-for-react";
 import { NotFoundPage } from "./components/errors/NotFound";
 import { FolderContentPage } from "./components/pages/FolderContent";
 import { FolderOverviewPage } from "./components/pages/FolderOverview";
-import { FormDetialPage } from "./components/pages/FormDetial";
+import { FormDetailPage } from "./components/pages/FormDetail";
 import { HomePage } from "./components/pages/Home";
 import { Footer } from "./components/shared/Footer";
 import { NavBar } from "./components/shared/NavBar";
@@ -36,7 +36,7 @@ export const form_detail = (s0: AppState): Widget<Action<AppState>> =>
         async<HubspotForm>()(s0.current_form).map(a => s => ({ ...s, current_form: a(s.current_form) })),
         async<HubspotSubmission>()(s0.current_submissions).map(a => s => ({ ...s, current_submissions: a(s.current_submissions) })),
 
-        fromJSX(setState => FormDetialPage({
+        fromJSX(setState => FormDetailPage({
             appState: s0,
             setState: setState
         }))
